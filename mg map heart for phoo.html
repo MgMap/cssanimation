@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Ani Effect</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			height: 100vh;
+
+			display: flex;
+			justify-content:center;
+			align-items: center;
+		}
+
+		.heart{
+			width: 100px;
+			height: 100px;
+			background-color: tomato;
+
+			transform: rotate(45deg);
+
+			position: relative;
+			animation: myani 0.7s linear infinite;
+		}
+
+		.heart::before{
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color:tomato;
+			border-radius: 50%;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			transform: translateY(-50%);
+		}
+
+		.heart::after{
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color:tomato;
+
+			border-radius: 50%;
+
+
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			transform: translateX(-50%);
+		}
+
+
+
+		@keyframes myani{
+			0%{
+				transform: scale(1.0) rotate(45deg);
+			}
+			25%{
+				transform: scale(1.3) rotate(45deg);
+			}
+			50%{
+				transform: scale(1.1) rotate(45deg);
+			}
+			83%{
+				transform: scale(1.4) rotate(45deg);
+			}
+			100%{
+				transform: scale(1) rotate(45deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="heart"></div>
+</body>
+</html>
